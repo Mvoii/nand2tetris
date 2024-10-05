@@ -1,0 +1,12 @@
+/**
+ * And using nands
+ */
+
+CHIP And {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+        Nand(a= a, b= a, out= out1);
+        Nand(a= out1, b= out1, out= out);
+}

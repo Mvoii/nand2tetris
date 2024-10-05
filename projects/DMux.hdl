@@ -1,0 +1,13 @@
+/// Dmux 1:2
+
+CHIP DMux {
+    IN in, sel;
+    OUT a, b;
+
+    PARTS:
+    Nand(a= sel, b= sel, out= outSel);
+    Nand(a= a, b= outSel, out= out1);
+    Nand(a= b, b= sel, out= out2);
+    Nand(a= out1, b= out1, out= a);
+    Nand(a= out2, b= out2, out= b);
+}

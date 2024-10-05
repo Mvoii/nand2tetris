@@ -1,0 +1,11 @@
+/**
+ * an implimentation of teh nand gate
+ */
+CHIP Nand {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    And(a=a, b=b, out=outAnd);
+    Not(in=outAnd, out=out);
+}
